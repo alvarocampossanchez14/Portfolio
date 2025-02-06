@@ -1,0 +1,44 @@
+---
+import proyectos from '../data/projects.json'; // Ruta al archivo JSON
+
+// Si necesitas usar los datos como una variable, puedes pasarlos así:
+const proyectosData = proyectos;
+---
+
+<section class="p-8 w-full">
+  <h2 class="text-5xl font-semibold ">PROYECTOS</h2>
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 mt-10 ">
+    {proyectosData.map((proyecto) => (
+      <div class="flex flex-col justify-center items-center gap-5 py-5 px-7 max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
+        <img src={proyecto.image} alt={proyecto.name} class="w-full rounded-md h-32 sm:h-48 object-cover" />
+        
+        <div class="flex flex-col items-start gap-2">
+          <h1 class="text-xl font-medium text-gray-800 dark:text-white">{proyecto.name}</h1>
+          <p class="text-gray-600 dark:text-gray-300 text-start">{proyecto.description}</p>
+          
+          <div class="grid grid-cols-2 gap-2">
+            {proyecto.technologies && proyecto.technologies.map((technology)=> (
+            <div class="flex gap-2 items-center justify-center bg-secondary/30 px-4 py-2 rounded-full">
+              <h1 class="text-sm font-medium text-gray-200 ">{technology.name}</h1>
+            </div>
+            ))}
+
+          </div>
+        </div>
+
+        <div class="w-full bg-gray-600 h-0.5"></div>
+
+        <div class="flex gap-2">
+          <a href={proyecto.demoLink} target="_blank" class="bg-secondary font-bold py-2 px-4 rounded-full mt-2 flex items-center justify-between gap-2 hover:scale-105 hover:bg-opacity-55">
+            Demo
+            <i class="fa-solid fa-eye"></i>
+          </a>
+          <a href={proyecto.demoLink} target="_blank" class="bg-secondary font-bold py-2 px-4 rounded-full mt-2 flex items-center justify-between gap-2 hover:scale-105 hover:bg-opacity-55">
+            Código
+            <i class="fa-brands fa-github"></i>
+          </a>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>

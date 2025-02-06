@@ -1,0 +1,40 @@
+[
+    {
+      "name": "My Mundo 3D - eCommerce",
+      "description": "An online store for 3D products.",
+      "image": "/public/captura2.png",
+      "demoLink": "https://test.alvarocampos.dev",
+      "githubLink": "https://github.com/alvarocampossanchez14/MyMundo3D-/",
+      "technologies": [
+        {"name":"Laravel"},
+        {"name":"TailwindCSS"},
+        {"name":"MySQL"},
+        {"name":"Docker"}
+      ]
+    },
+    {
+      "name": "Personal BLOG",
+      "description": "Vivamus non nunc auctor, gravida eros non, luctus tortor.",
+      "image": "/public/captura3.png",
+      "demoLink": "https://demo3.com",
+      "githubLink": "https://github.com/alvarocampossanchez14/BLOG-CAS-IB",
+      "technologies": [
+        {"name":"Laravel"},
+        {"name":"TailwindCSS"},
+        {"name":"MySQL"},
+        {"name":"Docker"}
+      ]
+    },
+    {
+      "name": "WEB Rockstar RP",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "image": "projects/rockstaroleplay.png",
+      "demoLink": "https://rockstaroleplay.com",
+      "githubLink": "https://github.com/alvarocampossanchez14/MyMundo3D-/",
+      "technologies": [
+        {"name":"Astro"},
+        {"name":"TailwindCSS"}
+      ]
+    }
+  ]
+  

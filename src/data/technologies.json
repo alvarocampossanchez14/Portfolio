@@ -1,0 +1,27 @@
+[
+    {
+      "name": "Laravel",
+      "icon": "/icons/laravel.svg"
+    },
+    {
+      "name": "Astro",
+      "icon": "/icons/astrojs.svg"
+    },
+    {
+      "name": "TailwindCSS",
+      "icon": "/icons/tailwindcss.svg"
+    },
+    {
+        "name": "MySQL",
+        "icon": "/icons/mysql-4.svg"
+    },
+    {
+        "name": "Docker",
+        "icon": "/icons/docker.svg"
+    },
+    {
+        "name": "Nginx",
+        "icon": "/icons/nginx.svg"
+      }
+  ]
+  

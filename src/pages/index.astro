@@ -1,0 +1,54 @@
+---
+	import Layout from '../layouts/Layout.astro';
+	import Badge from '../components/Badge.astro';
+	import Contact from '../components/Contact.astro';
+	import TimeLine from '../components/TimeLine.astro';
+	import Experience from '../components/Experience.astro';
+	import SectionClass from '../components/SectionClass.astro';
+	import AboutMe from '../components/AboutMe.astro';
+
+	import Separator from '../components/Separator.astro';
+import Projects from '../components/Projects.astro';
+
+
+---
+
+
+<Layout title="Álvaro Campos - Portfolio ">
+    <AboutMe />
+	<Projects />
+	<TimeLine />
+    <Contact />
+</Layout>
+
+<style>
+.scroll-down {
+	animation: blink 2s infinite ease-out;
+}
+
+
+
+	@keyframes blink {
+		0% {
+			transform: translateY(0%);
+		}
+
+		100% {
+			transform: translateY(20%);
+		}
+	}
+</style>
+<script>
+		const scrollDown = document.querySelector('.scroll-down');
+		scrollDown.addEventListener('click', function() {
+			window.scrollTo(0, 662);
+		});
+
+
+</script>
+
+
+
+
+
+
