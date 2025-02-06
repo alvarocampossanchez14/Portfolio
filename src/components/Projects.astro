@@ -5,11 +5,11 @@ import proyectos from '../data/projects.json'; // Ruta al archivo JSON
 const proyectosData = proyectos;
 ---
 
-<section class="p-8 w-full">
+<section class="p-8 w-full" id="projects">
   <h2 class="text-5xl font-semibold ">PROYECTOS</h2>
   <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 mt-10 ">
     {proyectosData.map((proyecto) => (
-      <div class="flex flex-col justify-center items-center gap-5 py-5 px-7 max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
+      <div class="flex flex-col justify-between items-center gap-5 py-5 px-7 max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
         <img src={proyecto.image} alt={proyecto.name} class="w-full rounded-md h-32 sm:h-48 object-cover" />
         
         <div class="flex flex-col items-start gap-2">
