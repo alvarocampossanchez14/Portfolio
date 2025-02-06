@@ -2,7 +2,7 @@
     {
       "name": "My Mundo 3D - eCommerce",
       "description": "An online store for 3D products.",
-      "image": "/public/captura2.png",
+      "image": "/captura2.png",
       "demoLink": "https://test.alvarocampos.dev",
       "githubLink": "https://github.com/alvarocampossanchez14/MyMundo3D-/",
       "technologies": [
@@ -15,7 +15,7 @@
     {
       "name": "Personal BLOG",
       "description": "Vivamus non nunc auctor, gravida eros non, luctus tortor.",
-      "image": "/public/captura3.png",
+      "image": "/captura3.png",
       "demoLink": "https://demo3.com",
       "githubLink": "https://github.com/alvarocampossanchez14/BLOG-CAS-IB",
       "technologies": [
