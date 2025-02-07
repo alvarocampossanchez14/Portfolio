@@ -26,6 +26,18 @@
       ]
     },
     {
+      "name": "Pokedex",
+      "description": "A web application to explore and search for Pokémon using Vite and a REST API.",
+      "image": "/pokedex.png",
+      "demoLink": "https://pokedex.alvarocampos.dev",
+      "githubLink": "https://github.com/alvarocampossanchez14/pokedex",
+      "technologies": [
+        {"name":"Vite"},
+        {"name":"TailwindCSS"},
+        {"name":"API REST"}
+      ]
+    },
+    {
       "name": "WEB Rockstar RP",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       "image": "projects/rockstaroleplay.png",
