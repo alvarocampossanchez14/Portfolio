@@ -1,7 +1,30 @@
 [
     {
+      "name": "WEB Rockstar RP",
+      "description": "Una página web básica de información creada con Astro.",
+      "image": "projects/rockstaroleplay.png",
+      "demoLink": "https://rockstaroleplay.com",
+      "githubLink": "https://github.com/alvarocampossanchez14/MyMundo3D-/",
+      "technologies": [
+        {"name":"Astro"},
+        {"name":"TailwindCSS"}
+      ]
+    },
+    {
+      "name": "Pokedex",
+      "description": "Una simple aplicación web que muestra información de los Pokemons.",
+      "image": "/pokedex.png",
+      "demoLink": "https://pokedex.alvarocampos.dev",
+      "githubLink": "https://github.com/alvarocampossanchez14/pokedex",
+      "technologies": [
+        {"name":"Vite"},
+        {"name":"TailwindCSS"},
+        {"name":"API REST"}
+      ]
+    },
+    {
       "name": "My Mundo 3D - eCommerce",
-      "description": "An online store for 3D products.",
+      "description": "E-Commerce con Panel de Administración para empresa de venta de productos 3D.",
       "image": "/captura2.png",
       "demoLink": "https://test.alvarocampos.dev",
       "githubLink": "https://github.com/alvarocampossanchez14/MyMundo3D-/",
@@ -14,38 +37,16 @@
     },
     {
       "name": "Personal BLOG",
-      "description": "Vivamus non nunc auctor, gravida eros non, luctus tortor.",
+      "description": "Blog personal con panel de administración para publicar artículos.",
       "image": "/captura3.png",
       "demoLink": "https://demo3.com",
       "githubLink": "https://github.com/alvarocampossanchez14/BLOG-CAS-IB",
+      "status": "In Progress",
       "technologies": [
         {"name":"Laravel"},
         {"name":"TailwindCSS"},
         {"name":"MySQL"},
         {"name":"Docker"}
-      ]
-    },
-    {
-      "name": "Pokedex",
-      "description": "A web application to explore and search for Pokémon using Vite and a REST API.",
-      "image": "/pokedex.png",
-      "demoLink": "https://pokedex.alvarocampos.dev",
-      "githubLink": "https://github.com/alvarocampossanchez14/pokedex",
-      "technologies": [
-        {"name":"Vite"},
-        {"name":"TailwindCSS"},
-        {"name":"API REST"}
-      ]
-    },
-    {
-      "name": "WEB Rockstar RP",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      "image": "projects/rockstaroleplay.png",
-      "demoLink": "https://rockstaroleplay.com",
-      "githubLink": "https://github.com/alvarocampossanchez14/MyMundo3D-/",
-      "technologies": [
-        {"name":"Astro"},
-        {"name":"TailwindCSS"}
       ]
     }
   ]
