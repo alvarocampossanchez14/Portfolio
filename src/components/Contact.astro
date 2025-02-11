@@ -80,16 +80,23 @@
     const toggle = document.getElementById("promo-toggle");
     const input = document.getElementById("promo-input");
 
+    if (!toggle || !input) return;
+
     toggle.addEventListener("click", () => {
       const isChecked = toggle.getAttribute("aria-checked") === "true";
-      
-      toggle.setAttribute("aria-checked", !isChecked);
+
+
+      toggle.setAttribute("aria-checked", isChecked ? "false" : "true"); 
       toggle.classList.toggle("bg-indigo-600", !isChecked);
       toggle.classList.toggle("bg-gray-200", isChecked);
-      toggle.children[1].classList.toggle("translate-x-3.5", !isChecked);
-      toggle.children[1].classList.toggle("translate-x-0", isChecked);
-      
-      input.value = isChecked ? "No" : "Sí";
+
+
+      if (toggle.children.length > 1) {
+        toggle.children[1].classList.toggle("translate-x-3.5", !isChecked);
+        toggle.children[1].classList.toggle("translate-x-0", isChecked);
+      }
+
+      (input as HTMLInputElement).value = isChecked ? "No" : "Sí";
     });
   });
 </script>
