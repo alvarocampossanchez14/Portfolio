@@ -15,10 +15,22 @@ const { title } = Astro.props;
 <html lang="en" class="scroll-smooth select-none">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="description" content="n" />
-		<meta name="viewport" content="width=device-width" />
+		<meta name="description" content="Desarrollador Web & Mobile en Reus, Tarragona. Especializado en desarrollo de aplicaciones móviles y páginas web modernas, optimizadas y escalables. Creación de software a medida con tecnologías actuales. ¡Transforma tu idea en una app exitosa!" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+		<meta name="keywords" content="Desarrollador Web, Desarrollo de Apps, Web Apps, Mobile Apps, React, Astro, Tailwind CSS, SEO, Reus, Tarragona" />
+		<meta name="author" content="Álvaro Campos" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.ico" />
 		<meta name="generator" content={Astro.generator} />
+
+
+		<!-- Open Graph para Facebook, LinkedIn -->
+		<meta property="og:title" content="{title} | Desarrollador Web & Mobile en Reus, Tarragona" />
+		<meta property="og:description" content="Desarrollo de aplicaciones web y móviles con tecnologías modernas como Larvel, Astro, React y Tailwind CSS." />
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="https://alvarocampos.dev" />
+
+
+
 		<title>{title}</title>
 	</head>
 	<body class="text-white text-pretty bg-gradient-to-b from-[#1A202C] to-[#2d384d] scroll-smooth">
