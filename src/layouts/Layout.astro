@@ -10,57 +10,58 @@ interface Props {
 const { title } = Astro.props;
 ---
 
-
 <!doctype html>
-<html lang="en" class="scroll-smooth select-none">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Soy Álvaro Campos, desarrollador web y móvil en Reus, Tarragona. Especializado en aplicaciones web modernas, optimizadas y escalables. Desarrollo soluciones personalizadas utilizando tecnologías como React, Astro, y Tailwind CSS." />
-		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-		<meta name="keywords" content="Desarrollador Web, Desarrollo de Apps, Web Apps, Mobile Apps, React, Astro, Tailwind CSS, SEO, Reus, Tarragona" />
-		<meta name="author" content="Álvaro Campos" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.ico" />
-		<meta name="generator" content={Astro.generator} />
+<html lang="es" class="scroll-smooth select-none">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Soy Álvaro Campos, desarrollador web y móvil Freelance en Reus, Tarragona. Especializado en aplicaciones web modernas, optimizadas y escalables. Desarrollo soluciones personalizadas utilizando tecnologías como React, Astro, y Tailwind CSS." />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="keywords" content="Desarrollador Web, Desarrollo de Apps, Web Apps, Mobile Apps, React, Astro, Tailwind CSS, SEO, Reus, Tarragona, Freelance, Desarrollador Freelance" />
+    <meta name="author" content="Álvaro Campos" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+    <meta name="generator" content={Astro.generator} />
 
+    <!-- Open Graph para Facebook, LinkedIn -->
+    <meta property="og:title" content={`${title} | Desarrollador Web & Mobile en Reus, Tarragona`} />
+    <meta property="og:description" content="Desarrollo de aplicaciones web y móviles con tecnologías modernas como Laravel, Astro, React y Tailwind CSS." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://alvarocampos.dev" />
 
-		<!-- Open Graph para Facebook, LinkedIn -->
-		<meta property="og:title" content=`${title} | Desarrollador Web & Mobile en Reus, Tarragona` />
-		<meta property="og:description" content="Desarrollo de aplicaciones web y móviles con tecnologías modernas como Larvel, Astro, React y Tailwind CSS." />
-		<meta property="og:type" content="website" />
-		<meta property="og:url" content="https://alvarocampos.dev" />
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={`${title} | Desarrollador Web & Mobile en Reus, Tarragona`} />
+    <meta name="twitter:description" content="Desarrollo de aplicaciones web y móviles con tecnologías modernas como Laravel, Astro, React y Tailwind CSS." />
 
-
-
-		<title>{title} | Desarrollador Web & Mobile en Reus, Tarragona | React, Astro, Tailwind</title>
-	</head>
-	<body class="text-white text-pretty bg-gradient-to-b from-[#1A202C] to-[#2d384d] scroll-smooth">
-		<Header />
-		<main class="container mx-auto px-6 py-8   dark:text-white">
-			<slot/>
-		</main>
-		<Footer />
-	</body>
-
-	
+    <title>{title} | Desarrollador Web & Mobile en Reus, Tarragona | React, Astro, Tailwind</title>
+  </head>
+  <body class="text-white text-pretty bg-gradient-to-b from-[#1A202C] to-[#2d384d] scroll-smooth">
+    <Header />
+    <main class="container mx-auto px-6 py-8 dark:text-white">
+      <slot />
+    </main>
+    <Footer />
+  </body>
 </html>
+
 <style is:global>
-	:root {
-		color-scheme: light dark;
-		color: #13151a;
-		background-color: #1A202C;
-	}
-	html {
-		font-family: 'Onest Variable', sans-serif;
-		background: #ffff;
-		color: #2f323a;
-		background-size: 224px;
-	}
-	body {
-		display: flex;
-		flex-direction: column;
-		min-height: 100vh;
-		align-items: center;
-		overflow-x: hidden;
-	}
+  :root {
+    color-scheme: light dark;
+    color: #13151a;
+    background-color: #1A202C;
+  }
+  html {
+    font-family: 'Onest Variable', sans-serif;
+    background: #ffff;
+    color: #2f323a;
+    background-size: 224px;
+  }
+  body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    align-items: center;
+    overflow-x: hidden;
+  }
 </style>
+
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />

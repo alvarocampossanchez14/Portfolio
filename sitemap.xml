@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Página principal (única página del sitio) -->
+  <url>
+    <loc>https://alvarocampos.dev/</loc>
+    <lastmod>2025-02-13</lastmod> <!-- Fecha de la última modificación -->
+    <priority>1.0</priority>
+  </url>
+
+</urlset>
