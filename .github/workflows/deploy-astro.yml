@@ -15,8 +15,8 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '18.19.1' 
-          cache: 'npm' 
+          node-version: '18.19.1'
+          cache: 'npm'
 
       - name: Install NPM Dependencies
         run: npm install
@@ -31,21 +31,27 @@ jobs:
           username: ${{ secrets.SSH_USERNAME }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: 22
-          # 'env' debe estar a este nivel de indentación
-          env:
-            SERVER_DIR: ${{ secrets.ASTRO_SERVER_DIR }} 
+          # ¡ATENCIÓN! Hemos ELIMINADO la sección 'env:' de aquí.
           script: |
-            # ... (el resto de tu script) ...
+            # Definimos la variable SERVER_DIR al inicio del script.
+            SERVER_DIR="${{ secrets.ASTRO_SERVER_DIR }}"
+
+            echo "DEBUG: SERVER_DIR is $SERVER_DIR" # Línea de depuración temporal
+
+            # 1. Asegurarse de que el directorio principal existe y tiene permisos correctos
             sudo mkdir -p "$SERVER_DIR"
             sudo chown -R mym3dapp:www-data "$SERVER_DIR"
             sudo chmod -R 775 "$SERVER_DIR"
 
+            # 2. Eliminar la carpeta 'dist' antigua en el servidor antes de sincronizar
             sudo rm -rf "$SERVER_DIR"/dist
 
             echo "Preparando el servidor para rsync..."
 
+            # 3. La parte de rsync.
             rsync -avz --exclude='.git/' --exclude='node_modules/' ${{ github.workspace }}/dist/ "$SERVER_DIR"/dist/
 
+            # 4. Ajustar permisos a la carpeta 'dist' recién sincronizada
             sudo chown -R www-data:www-data "$SERVER_DIR"/dist
             sudo find "$SERVER_DIR"/dist -type d -exec sudo chmod 755 {} +
             sudo find "$SERVER_DIR"/dist -type f -exec sudo chmod 644 {} +
