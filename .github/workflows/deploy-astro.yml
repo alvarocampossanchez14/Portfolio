@@ -33,26 +33,26 @@ jobs:
           port: 22
           script: |
            # 1. Asegurarse de que el directorio principal existe y tiene permisos correctos
-            sudo mkdir -p ${{ secrets.ASTRO_SERVER_DIR }}
-            sudo chown -R mym3dapp:www-data ${{ secrets.ASTRO_SERVER_DIR }}
-            sudo chmod -R 775 ${{ secrets.ASTRO_SERVER_DIR }}
+            sudo mkdir -p ${{ secrets.ASTRO_SERVER_DIST }}
+            sudo chown -R mym3dapp:www-data ${{ secrets.ASTRO_SERVER_DIST }}
+            sudo chmod -R 775 ${{ secrets.ASTRO_SERVER_DIST }}
 
             # 2. Eliminar la carpeta 'dist' antigua en el servidor antes de sincronizar
             # Esto es importante para una limpieza completa
-            rm -rf ${{ secrets.ASTRO_SERVER_DIR }}/dist
+            rm -rf ${{ secrets.ASTRO_SERVER_DIST }}/dist
 
             echo "Preparando el servidor para rsync..."
 
             # Navegar al directorio raíz del proyecto Astro en el servidor
-            cd ${{ secrets.ASTRO_SERVER_DIR }}
+            cd ${{ secrets.ASTRO_SERVER_DIST }}
 
             # Sincronizar los archivos compilados (la carpeta 'dist')
             # Excluir .git para no copiar el repositorio de GitHub Actions
             # Excluir node_modules para no copiar las dependencias de desarrollo
-            rsync -avz --exclude='.git/' --exclude='node_modules/' ./dist/ ${{ secrets.ASTRO_SERVER_DIR }}/dist/
+            rsync -avz --exclude='.git/' --exclude='node_modules/' ./dist/ ${{ secrets.ASTRO_SERVER_DIST }}/dist/
 
             # Asegurar que Nginx puede leer los archivos
-            sudo chown -R www-data:www-data ${{ secrets.ASTRO_SERVER_DIR }}/dist
-            sudo chmod -R 755 ${{ secrets.ASTRO_SERVER_DIR }}/dist
+            sudo chown -R www-data:www-data ${{ secrets.ASTRO_SERVER_DIST }}/dist
+            sudo chmod -R 755 ${{ secrets.ASTRO_SERVER_DIST }}/dist
 
             echo "Astro portfolio deployment complete!"
