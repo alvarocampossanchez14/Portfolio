@@ -49,7 +49,7 @@ jobs:
             # Sincronizar los archivos compilados (la carpeta 'dist')
             # Excluir .git para no copiar el repositorio de GitHub Actions
             # Excluir node_modules para no copiar las dependencias de desarrollo
-            rsync -avz --delete --exclude='.git/' --exclude='node_modules/' ${{ github.workspace }}/dist/ ${{ secrets.ASTRO_SERVER_DIR }}/dist/
+            rsync -avz --exclude='.git/' --exclude='node_modules/' ./dist/ ${{ secrets.ASTRO_SERVER_DIR }}/dist/
 
             # Asegurar que Nginx puede leer los archivos
             sudo chown -R www-data:www-data ${{ secrets.ASTRO_SERVER_DIR }}/dist
