@@ -31,6 +31,7 @@ jobs:
           username: ${{ secrets.SSH_USERNAME }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: 22
+          # ¡AQUÍ ESTÁ EL CAMBIO CLAVE DE INDENTACIÓN!
           env:
             SERVER_DIR: ${{ secrets.ASTRO_SERVER_DIR }} # Asegúrate que esto esté aquí
           script: |
