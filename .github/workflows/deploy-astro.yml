@@ -28,13 +28,13 @@ jobs:
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.SSH_HOST }}
-          username: ${{ secrets.SSH_USERNAME }}
+          username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: 22
           # ¡ATENCIÓN! Hemos ELIMINADO la sección 'env:' de aquí.
           script: |
             # Definimos la variable SERVER_DIR al inicio del script.
-            SERVER_DIR="${{ secrets.ASTRO_SERVER_DIR }}"
+            SERVER_DIR="${{ secrets.ASTRO_SERVER_DIST }}"
 
             echo "DEBUG: SERVER_DIR is $SERVER_DIR" # Línea de depuración temporal
 
