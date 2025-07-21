@@ -31,25 +31,21 @@ jobs:
           username: ${{ secrets.SSH_USERNAME }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: 22
-          # ¡AQUÍ ESTÁ EL CAMBIO CLAVE DE INDENTACIÓN!
+          # 'env' debe estar a este nivel de indentación
           env:
-            SERVER_DIR: ${{ secrets.ASTRO_SERVER_DIR }} # Asegúrate que esto esté aquí
+            SERVER_DIR: ${{ secrets.ASTRO_SERVER_DIR }} 
           script: |
-            # 1. Asegurarse de que el directorio principal existe y tiene permisos correctos
+            # ... (el resto de tu script) ...
             sudo mkdir -p "$SERVER_DIR"
             sudo chown -R mym3dapp:www-data "$SERVER_DIR"
             sudo chmod -R 775 "$SERVER_DIR"
 
-            # 2. Eliminar la carpeta 'dist' antigua en el servidor antes de sincronizar
             sudo rm -rf "$SERVER_DIR"/dist
 
             echo "Preparando el servidor para rsync..."
 
-            # 3. La parte de rsync.
-            # ¡CAMBIA ESTA LÍNEA! Usamos github.workspace directamente para asegurar la ruta absoluta.
             rsync -avz --exclude='.git/' --exclude='node_modules/' ${{ github.workspace }}/dist/ "$SERVER_DIR"/dist/
 
-            # 4. Ajustar permisos a la carpeta 'dist' recién sincronizada
             sudo chown -R www-data:www-data "$SERVER_DIR"/dist
             sudo find "$SERVER_DIR"/dist -type d -exec sudo chmod 755 {} +
             sudo find "$SERVER_DIR"/dist -type f -exec sudo chmod 644 {} +
