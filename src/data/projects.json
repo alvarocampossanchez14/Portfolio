@@ -26,7 +26,7 @@
       "name": "My Mundo 3D - eCommerce",
       "description": "E-Commerce con Panel de Administración para empresa de venta de productos 3D.",
       "image": "/captura2.png",
-      "demoLink": "https://test.alvarocampos.dev",
+      "demoLink": "https://mym3d.alvarocampos.dev",
       "githubLink": "https://github.com/alvarocampossanchez14/MyMundo3D-/",
       "technologies": [
         {"name":"Laravel"},

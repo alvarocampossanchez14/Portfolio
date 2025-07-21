@@ -1,0 +1,50 @@
+name: Deploy Astro Portfolio to VPS
+
+on:
+  push:
+    branches:
+      - main # Dispara el workflow cuando se hace push a la rama 'main' de tu portfolio
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest # El runner de GitHub Actions
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18.19.1' 
+          cache: 'npm' 
+
+      - name: Install NPM Dependencies
+        run: npm install
+
+      - name: Build Astro Project
+        run: npm run build # Este comando compila Astro a la carpeta 'dist' por defecto
+
+      - name: Sync Files and Deploy to VPS
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USERNAME }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: 22
+          script: |
+            # Crear el directorio si no existe (por si acaso)
+            mkdir -p ${{ secrets.ASTRO_SERVER_DIR }}
+
+            # Navegar al directorio raíz del proyecto Astro en el servidor
+            cd ${{ secrets.ASTRO_SERVER_DIR }}
+
+            # Sincronizar los archivos compilados (la carpeta 'dist')
+            # Excluir .git para no copiar el repositorio de GitHub Actions
+            # Excluir node_modules para no copiar las dependencias de desarrollo
+            rsync -avz --delete --exclude='.git/' --exclude='node_modules/' ${{ github.workspace }}/dist/ ${{ secrets.ASTRO_SERVER_DIR }}/dist/
+
+            # Asegurar que Nginx puede leer los archivos
+            sudo chown -R www-data:www-data ${{ secrets.ASTRO_SERVER_DIR }}/dist
+            sudo chmod -R 755 ${{ secrets.ASTRO_SERVER_DIR }}/dist
+
+            echo "Astro portfolio deployment complete!"
