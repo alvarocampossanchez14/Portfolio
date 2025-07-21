@@ -28,31 +28,29 @@ jobs:
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.SSH_HOST }}
-          username: ${{ secrets.SSH_USER }}
+          username: ${{ secrets.SSH_USERNAME }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: 22
+          env:
+            SERVER_DIR: ${{ secrets.ASTRO_SERVER_DIR }} # Asegúrate que esto esté aquí
           script: |
-           # 1. Asegurarse de que el directorio principal existe y tiene permisos correctos
-            sudo mkdir -p ${{ secrets.ASTRO_SERVER_DIST }}
-            sudo chown -R mym3dapp:www-data ${{ secrets.ASTRO_SERVER_DIST }}
-            sudo chmod -R 775 ${{ secrets.ASTRO_SERVER_DIST }}
+            # 1. Asegurarse de que el directorio principal existe y tiene permisos correctos
+            sudo mkdir -p "$SERVER_DIR"
+            sudo chown -R mym3dapp:www-data "$SERVER_DIR"
+            sudo chmod -R 775 "$SERVER_DIR"
 
             # 2. Eliminar la carpeta 'dist' antigua en el servidor antes de sincronizar
-            # Esto es importante para una limpieza completa
-            rm -rf ${{ secrets.ASTRO_SERVER_DIST }}/dist
+            sudo rm -rf "$SERVER_DIR"/dist
 
             echo "Preparando el servidor para rsync..."
 
-            # Navegar al directorio raíz del proyecto Astro en el servidor
-            cd ${{ secrets.ASTRO_SERVER_DIST }}
+            # 3. La parte de rsync.
+            # ¡CAMBIA ESTA LÍNEA! Usamos github.workspace directamente para asegurar la ruta absoluta.
+            rsync -avz --exclude='.git/' --exclude='node_modules/' ${{ github.workspace }}/dist/ "$SERVER_DIR"/dist/
 
-            # Sincronizar los archivos compilados (la carpeta 'dist')
-            # Excluir .git para no copiar el repositorio de GitHub Actions
-            # Excluir node_modules para no copiar las dependencias de desarrollo
-            rsync -avz --exclude='.git/' --exclude='node_modules/' ./dist/ ${{ secrets.ASTRO_SERVER_DIST }}/dist/
-
-            # Asegurar que Nginx puede leer los archivos
-            sudo chown -R www-data:www-data ${{ secrets.ASTRO_SERVER_DIST }}/dist
-            sudo chmod -R 755 ${{ secrets.ASTRO_SERVER_DIST }}/dist
+            # 4. Ajustar permisos a la carpeta 'dist' recién sincronizada
+            sudo chown -R www-data:www-data "$SERVER_DIR"/dist
+            sudo find "$SERVER_DIR"/dist -type d -exec sudo chmod 755 {} +
+            sudo find "$SERVER_DIR"/dist -type f -exec sudo chmod 644 {} +
 
             echo "Astro portfolio deployment complete!"
