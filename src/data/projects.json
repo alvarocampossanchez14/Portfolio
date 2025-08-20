@@ -11,18 +11,6 @@
       ]
     },
     {
-      "name": "Pokedex",
-      "description": "Una simple aplicación web que muestra información de los Pokemons.",
-      "image": "/pokedex.png",
-      "demoLink": "https://pokedex.alvarocampos.dev",
-      "githubLink": "https://github.com/alvarocampossanchez14/pokedex",
-      "technologies": [
-        {"name":"Vite"},
-        {"name":"TailwindCSS"},
-        {"name":"API REST"}
-      ]
-    },
-    {
       "name": "My Mundo 3D - eCommerce",
       "description": "E-Commerce con Panel de Administración para empresa de venta de productos 3D.",
       "image": "/captura2.png",
