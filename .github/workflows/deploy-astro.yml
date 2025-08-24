@@ -27,16 +27,16 @@ jobs:
       - name: Deploy with rsync over SSH
         uses: burnett01/rsync-deployments@5.2.1
         with:
-          # Configuración del servidor
-          host: ${{ secrets.SSH_HOST }}
-          username: ${{ secrets.SSH_USER }}
-          ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
+          # Use the new input names
+          remote_host: ${{ secrets.SSH_HOST }}
+          remote_user: ${{ secrets.SSH_USER }}
+          remote_key: ${{ secrets.SSH_PRIVATE_KEY }}
           
           # Directorios de origen y destino
           source: 'dist/'
           target: '${{ secrets.ASTRO_SERVER_DIST }}'
 
-          # Opciones de rsync. Aseguran que la carpeta de destino se borre y se reemplace.
+          # Opciones de rsync.
           rsync_options: '-avz --delete'
           
       - name: Fix directory permissions on the VPS
