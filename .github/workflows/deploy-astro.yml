@@ -7,7 +7,7 @@ on:
 
 jobs:
   deploy:
-    runs-on: ubuntu-latest # El runner de GitHub Actions
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -22,38 +22,33 @@ jobs:
         run: npm install
 
       - name: Build Astro Project
-        run: npm run build # Este comando compila Astro a la carpeta 'dist' por defecto
+        run: npm run build
 
-      - name: Sync Files and Deploy to VPS
+      - name: Deploy with rsync over SSH
+        uses: burnett01/rsync-deployments@5.2.1
+        with:
+          # Configuración del servidor
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
+          
+          # Directorios de origen y destino
+          source: 'dist/'
+          target: '${{ secrets.ASTRO_SERVER_DIST }}'
+
+          # Opciones de rsync. Aseguran que la carpeta de destino se borre y se reemplace.
+          rsync_options: '-avz --delete'
+          
+      - name: Fix directory permissions on the VPS
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: 22
-          # ¡ATENCIÓN! Hemos ELIMINADO la sección 'env:' de aquí.
           script: |
-            # Definimos la variable SERVER_DIR al inicio del script.
-            SERVER_DIR="${{ secrets.ASTRO_SERVER_DIST }}"
-
-            echo "DEBUG: SERVER_DIR is $SERVER_DIR" # Línea de depuración temporal
-
-            # 1. Asegurarse de que el directorio principal existe y tiene permisos correctos
-            sudo mkdir -p "$SERVER_DIR"
-            sudo chown -R mym3dapp:www-data "$SERVER_DIR"
-            sudo chmod -R 775 "$SERVER_DIR"
-
-            # 2. Eliminar la carpeta 'dist' antigua en el servidor antes de sincronizar
-            sudo rm -rf "$SERVER_DIR"/dist
-
-            echo "Preparando el servidor para rsync..."
-
-            # 3. La parte de rsync.
-            rsync -avz --exclude='.git/' --exclude='node_modules/' ${{ github.workspace }}/dist/ "$SERVER_DIR"/dist/
-
-            # 4. Ajustar permisos a la carpeta 'dist' recién sincronizada
-            sudo chown -R www-data:www-data "$SERVER_DIR"/dist
-            sudo find "$SERVER_DIR"/dist -type d -exec sudo chmod 755 {} +
-            sudo find "$SERVER_DIR"/dist -type f -exec sudo chmod 644 {} +
-
-            echo "Astro portfolio deployment complete!"
+            # Ajustamos los permisos del directorio de despliegue completo
+            sudo chown -R www-data:www-data ${{ secrets.ASTRO_SERVER_DIST }}
+            sudo find ${{ secrets.ASTRO_SERVER_DIST }} -type d -exec sudo chmod 755 {} +
+            sudo find ${{ secrets.ASTRO_SERVER_DIST }} -type f -exec sudo chmod 644 {} +
+            echo "Permisos del servidor actualizados."
