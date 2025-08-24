@@ -13,7 +13,7 @@
     },
     {
         "name": "MySQL",
-        "icon": "/icons/mysql-4.svg"
+        "icon": "/icons/mysql.svg"
     },
     {
         "name": "Docker",
