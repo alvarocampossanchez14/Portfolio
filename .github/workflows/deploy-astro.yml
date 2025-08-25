@@ -7,8 +7,7 @@ on:
 
 jobs:
   deploy:
-    runs-on: ubuntu-latest # El runner de GitHub Actions
-
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -16,28 +15,24 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '18.19.1' # Versión recomendada por Astro
+          node-version: '18.19.1'
           cache: 'npm'
 
       - name: Install NPM Dependencies
         run: npm install
 
       - name: Build Astro Project
-        run: npm run build # Compila tu proyecto y genera la carpeta 'dist'
+        run: npm run build
 
       - name: Deploy with rsync over SSH
         uses: burnett01/rsync-deployments@5.2.1
         with:
-          # Use the correct input names for this action
+          # Nombres de variables correctos para esta acción
           remote_host: ${{ secrets.SSH_HOST }}
           remote_user: ${{ secrets.SSH_USER }}
           remote_key: ${{ secrets.SSH_PRIVATE_KEY }}
-          
-          # Tell the action what to send and where to send it
           source: 'dist/'
           target: '${{ secrets.ASTRO_SERVER_DIR }}'
-
-          # The options for rsync
           rsync_options: '-avz --delete'
           
       - name: Fix directory permissions on the VPS
@@ -48,7 +43,7 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: 22
           script: |
-            # Ajustamos los permisos para que el servidor web pueda servir los archivos
+            # La variable ${{ secrets.ASTRO_SERVER_DIR }} debe estar al final
             sudo chown -R www-data:www-data ${{ secrets.ASTRO_SERVER_DIR }}
             sudo find ${{ secrets.ASTRO_SERVER_DIR }} -type d -exec sudo chmod 755 {} +
             sudo find ${{ secrets.ASTRO_SERVER_DIR }} -type f -exec sudo chmod 644 {} +
