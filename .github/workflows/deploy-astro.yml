@@ -3,11 +3,11 @@ name: Deploy Astro Portfolio to VPS
 on:
   push:
     branches:
-      - main 
+      - main # Dispara el workflow cuando se hace push a la rama 'main'
 
 jobs:
   deploy:
-    runs-on: ubuntu-latest 
+    runs-on: ubuntu-latest # El runner de GitHub Actions
 
     steps:
       - name: Checkout code
@@ -16,14 +16,14 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '18.19.1' 
+          node-version: '18.19.1' # Versión recomendada por Astro
           cache: 'npm'
 
       - name: Install NPM Dependencies
         run: npm install
 
       - name: Build Astro Project
-        run: npm run build
+        run: npm run build # Compila tu proyecto y genera la carpeta 'dist'
 
       - name: Deploy with rsync over SSH
         uses: burnett01/rsync-deployments@5.2.1
