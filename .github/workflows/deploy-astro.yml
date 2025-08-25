@@ -36,7 +36,6 @@ jobs:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
           REMOTE_HOST: ${{ secrets.SSH_HOST }}
           REMOTE_USER: ${{ secrets.SSH_USER }}
-          REMOTE_PORT: ${{ secrets.SSH_PORT }}
           ARGS: "-rlgoDzvc -i --delete"
           SOURCE: "dist/"
           TARGET: "/var/www/alvarocampos.dev/"
