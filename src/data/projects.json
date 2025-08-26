@@ -11,6 +11,19 @@
       ]
     },
     {
+      "name": "Helix Studio RP",
+      "description": "Página web hecha para la comunidad de Helix Studio. Incluye un sistema de gestión de formularios a través de la API de discord y una base de datos en MySQL.",
+      "image": "projects/helixstudio.png",
+      "demoLink": "https://helixstudio.es/",
+      "githubLink": "https://github.com/alvarocampossanchez14/helix_web/",
+      "technologies": [
+        {"name":"Astro"},
+        {"name":"TailwindCSS"},
+        {"name": "Discord Rest API"},
+        {"name":"MySQL"}
+      ]
+    },
+    {
       "name": "My Mundo 3D - eCommerce",
       "description": "E-Commerce con Panel de Administración para empresa de venta de productos 3D.",
       "image": "/captura2.png",
