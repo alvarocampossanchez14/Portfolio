@@ -19,7 +19,6 @@
       "technologies": [
         {"name":"Astro"},
         {"name":"TailwindCSS"},
-        {"name": "Discord Rest API"},
         {"name":"MySQL"}
       ]
     },
