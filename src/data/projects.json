@@ -39,9 +39,8 @@
       "name": "Personal BLOG",
       "description": "Blog personal con panel de administración para publicar artículos.",
       "image": "/captura3.png",
-      "demoLink": "https://demo3.com",
+      "demoLink": "https://blog.alvarocampos.dev",
       "githubLink": "https://github.com/alvarocampossanchez14/BLOG-CAS-IB",
-      "status": "In Progress",
       "technologies": [
         {"name":"Laravel"},
         {"name":"TailwindCSS"},
