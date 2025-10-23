@@ -29,7 +29,7 @@ const proyectosData = proyectos;
 
         <div class="flex gap-2">
             <div class="bg-secondary font-bold py-2 px-4 rounded-full mt-2 flex items-center justify-between gap-2 hover:scale-105 hover:bg-opacity-55">
-            {proyecto.status === "In Progress" ? (
+            {proyecto?.status === "In Progress" ? (
               <span class="flex items-center gap-2">
                 <i class="fa-solid fa-spinner animate-spin"></i>
                 En Progreso                
