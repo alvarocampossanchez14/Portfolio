@@ -1,12 +1,12 @@
 [  
       {
-        "name": "WEB Rockstar RP",
-        "description": "Una página web básica de información creada con Astro.",
-        "image": "projects/rockstaroleplay.png",
-        "demoLink": "https://rockstaroleplay.com",
-        "githubLink": "https://github.com/alvarocampossanchez14/MyMundo3D-/",
+        "name": "WEB oficial del C.E Unió Astorga",
+        "description": "Web oficial del Club Esportiu Unió Astorga, equipo de fútbol base en Reus.",
+        "image": "projects/astorga.png",
+        "demoLink": "https://ceuniastorga.cat",
+        "githubLink": "https://github.com/alvarocampossanchez14/",
         "technologies": [
-            {"name":"Astro"},
+            {"name":"NextJS"},
             {"name":"TailwindCSS"}
           ]
       },
