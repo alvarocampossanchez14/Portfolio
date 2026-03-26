@@ -1,28 +1,35 @@
-<header class="fixed top-5 left-1/2 -translate-x-1/2 z-50">
-  <div class="flex items-center p-2 rounded-full border border-gray-700/50 bg-gray-900/60 backdrop-blur-md shadow-lg">
-    <a href="/" class="text-xl font-bold p-2 px-4 rounded-full hover:bg-white/10 transition-colors duration-300">Álvaro Campos</a>
-    
-    <nav class="hidden md:flex">
-      <ul class="flex gap-2">
-        <li><a class="py-2 px-4 rounded-full hover:bg-white/10 transition-colors duration-300" href="#about">Sobre Mí</a></li>
-        <li><a class="py-2 px-4 rounded-full hover:bg-white/10 transition-colors duration-300" href="#projects">Proyectos</a></li>
-        <li><a class="py-2 px-4 rounded-full hover:bg-white/10 transition-colors duration-300" href="#contact">Contacto</a></li>
+<header class="fixed inset-x-0 top-0 z-50 border-b border-border/70 bg-surfaceHeader/88 px-4 backdrop-blur-md">
+  <div class="mx-auto flex w-full max-w-6xl items-center justify-between py-3">
+    <a href="/" class="inline-flex items-center gap-3 rounded-md py-1">
+      <img src="/logo.png" alt="Logo de Álvaro Campos" class="h-14 w-auto object-cover" />
+    </a>
+
+    <nav class="hidden md:flex reveal">
+      <ul class="flex items-center gap-8 text-sm font-semibold uppercase tracking-[0.08em] text-textSoft">
+        <li><a class="pb-1 hover:text-text" href="#about">Perfil</a></li>
+        <li><a class="pb-1 hover:text-text" href="#projects">Proyectos</a></li>
+        <li><a class="pb-1 hover:text-text" href="#experience">Experiencia</a></li>
       </ul>
     </nav>
 
-    <button id="menu-button" class="md:hidden p-2 text-xl focus:outline-none">
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
-      </svg>
-    </button>
+    <div class="flex items-center justify-end gap-2">
+      <a href="#contact" class="hidden rounded-sm bg-primary px-4 py-1.5 text-sm font-semibold text-white shadow-[0_8px_20px_rgba(37,90,129,0.35)] hover:bg-primaryStrong md:inline-flex">Solicitar presupuesto</a>
+      <button id="menu-button" aria-expanded="false" aria-controls="mobile-menu" class="rounded-md border border-border p-1.5 text-textSoft md:hidden">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+        </svg>
+      </button>
+    </div>
   </div>
-  
-  <div id="mobile-menu" class="hidden absolute top-full mt-4 left-1/2 -translate-x-1/2 w-full rounded-2xl border border-gray-700/50 bg-gray-900/60 backdrop-blur-md shadow-lg p-4">
+
+  <div id="mobile-menu" class="mx-auto mb-2 hidden w-full max-w-6xl rounded-md border border-border bg-surface p-2 md:hidden">
     <nav>
-      <ul class="flex flex-col items-center gap-2">
-        <li><a class="py-2 px-4 rounded-full hover:bg-white/10 transition-colors duration-300" href="#about">Sobre Mí</a></li>
-        <li><a class="py-2 px-4 rounded-full hover:bg-white/10 transition-colors duration-300" href="#projects">Proyectos</a></li>
-        <li><a class="py-2 px-4 rounded-full hover:bg-white/10 transition-colors duration-300" href="#contact">Contacto</a></li>
+      <ul class="flex flex-col text-sm font-medium text-textSoft">
+        <li><a class="mobile-link block rounded-sm px-3 py-2 hover:bg-surfaceAlt hover:text-text" href="#about">Perfil</a></li>
+        <li><a class="mobile-link block rounded-sm px-3 py-2 hover:bg-surfaceAlt hover:text-text" href="#projects">Proyectos</a></li>
+        <li><a class="mobile-link block rounded-sm px-3 py-2 hover:bg-surfaceAlt hover:text-text" href="#experience">Experiencia</a></li>
+        <li><a class="mobile-link block rounded-sm px-3 py-2 hover:bg-surfaceAlt hover:text-text" href="#partners">Clientes</a></li>
+        <li><a class="mobile-link block rounded-sm px-3 py-2 font-semibold text-text hover:bg-surfaceAlt" href="#contact">Solicitar presupuesto</a></li>
       </ul>
     </nav>
   </div>
@@ -33,10 +40,20 @@
   document.addEventListener('DOMContentLoaded', () => {
     const menuButton = document.getElementById('menu-button');
     const mobileMenu = document.getElementById('mobile-menu');
+    const mobileLinks = document.querySelectorAll('.mobile-link');
 
     if (menuButton && mobileMenu) {
       menuButton.addEventListener('click', () => {
         mobileMenu.classList.toggle('hidden');
+        const expanded = menuButton.getAttribute('aria-expanded') === 'true';
+        menuButton.setAttribute('aria-expanded', (!expanded).toString());
+      });
+
+      mobileLinks.forEach((link) => {
+        link.addEventListener('click', () => {
+          mobileMenu.classList.add('hidden');
+          menuButton.setAttribute('aria-expanded', 'false');
+        });
       });
     }
   });

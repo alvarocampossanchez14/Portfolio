@@ -14,35 +14,84 @@ const { title } = Astro.props;
 <html lang="es" class="scroll-smooth select-none">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="Soy Álvaro Campos, desarrollador web y móvil Freelance en Reus y Tarragona. Especializado en aplicaciones web modernas, optimizadas y escalables. Desarrollo soluciones personalizadas utilizando tecnologías como Laravel, Astro, Next.js, React y Tailwind CSS." />
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="keywords" content="Desarrollador Web, Desarrollo de Apps, Web Apps, Mobile Apps, React, Astro, Tailwind CSS, SEO, Reus, Tarragona, Freelance, Desarrollador Freelance, Programador de aplicaciones web" />
+    <meta name="description" content="Programador freelance de aplicaciones y desarrollo web para empresas de España y clientes internacionales. Desarrollo apps moviles, SaaS, eCommerce y plataformas web a medida para captar clientes y escalar negocios digitales." />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="keywords" content="programador freelance apps, desarrollo de aplicaciones moviles, desarrollador web freelance, programador SaaS, desarrollo eCommerce, app developer España, programador app Reus, programador app Tarragona, freelance full stack developer" />
     <meta name="author" content="Álvaro Campos" />
+    <meta name="theme-color" content="#2f2f2e" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://alvarocampos.dev/" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
 
     <link rel="icon" type="image/png" href="https://alvarocampos.dev/favicon-96x96.png" sizes="96x96" />
-    <link rel="icon" type="image/svg+xml" href="https://alvarocampos.dev/favicon.svg" />
-    <link rel="shortcut icon" href="https://alvarocampos.dev/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="https://alvarocampos.dev/apple-touch-icon.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="https://alvarocampos.dev/apple-icon.png" />
     <link rel="manifest" href="https://alvarocampos.dev/site.webmanifest" />
 
     <meta name="generator" content={Astro.generator} />
 
     <!-- Open Graph para Facebook, LinkedIn -->
-    <meta property="og:title" content={`${title} | Desarrollador Web & Mobile en Reus, Tarragona`} />
-    <meta property="og:description" content="Desarrollo de aplicaciones web y móviles con tecnologías modernas como Laravel, Astro, React y Tailwind CSS." />
+    <meta property="og:title" content={`${title} | Programador Freelance de Apps y Web`} />
+    <meta property="og:description" content="Desarrollo de aplicaciones moviles, plataformas web y productos digitales a medida para empresas en España y clientes internacionales." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://alvarocampos.dev" />
+    <meta property="og:locale" content="es_ES" />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content={`${title} | Desarrollador Web & Mobile en Reus, Tarragona`} />
-    <meta name="twitter:description" content="Desarrollo de aplicaciones web y móviles con tecnologías modernas como Laravel, Astro, React y Tailwind CSS." />
+    <meta name="twitter:title" content={`${title} | Programador Freelance de Apps y Web`} />
+    <meta name="twitter:description" content="Programador freelance para apps moviles, eCommerce y plataformas web. Servicio remoto para España y clientes internacionales." />
 
-    <title>{title} | Desarrollador Web y Móvil en Reus, Tarragona | Laravel, Next.js, React, Astro, Tailwind</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <title>{title} | Programador Freelance de Apps, Web y SaaS</title>
+
+    <script type="application/ld+json" set:html={JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'Person',
+      name: 'Alvaro Campos',
+      jobTitle: 'Programador Freelance de Aplicaciones y Web',
+      url: 'https://alvarocampos.dev',
+      address: {
+        '@type': 'PostalAddress',
+        addressLocality: 'Reus',
+        addressRegion: 'Tarragona',
+        addressCountry: 'ES'
+      },
+      knowsAbout: [
+        'Desarrollo de aplicaciones moviles',
+        'Desarrollo web',
+        'Laravel',
+        'React',
+        'Astro',
+        'Tailwind CSS'
+      ],
+      areaServed: ['Reus', 'Tarragona', 'Cataluna', 'España', 'Europe', 'Remote']
+    })} />
+
+    <script type="application/ld+json" set:html={JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'ProfessionalService',
+      name: 'Alvaro Campos - Programador Freelance',
+      url: 'https://alvarocampos.dev',
+      serviceType: [
+        'Desarrollo de aplicaciones moviles',
+        'Desarrollo web a medida',
+        'Desarrollo SaaS',
+        'Desarrollo eCommerce'
+      ],
+      areaServed: ['España', 'Europa', 'Remote'],
+      availableLanguage: ['es', 'en']
+    })} />
   </head>
-  <body class="text-white text-pretty bg-gradient-to-b from-[#1A202C] to-[#2d384d] scroll-smooth">
+  <body class="scroll-smooth bg-bg text-text">
+    <div aria-hidden="true" class="pointer-events-none fixed inset-0 -z-10 bg-[radial-gradient(84rem_38rem_at_50%_-20%,rgba(47,111,158,0.18),transparent_64%)]"></div>
+    <div aria-hidden="true" class="pointer-events-none fixed inset-0 -z-10 opacity-30 [background:linear-gradient(to_right,rgba(113,132,145,0.12)_1px,transparent_1px),linear-gradient(to_bottom,rgba(113,132,145,0.1)_1px,transparent_1px)] [background-size:52px_52px]"></div>
+    <div aria-hidden="true" class="pointer-events-none fixed inset-x-0 top-0 -z-10 h-[420px] bg-[linear-gradient(180deg,rgba(12,16,19,0)_0%,rgba(12,16,19,0.85)_74%,#101417_100%)]"></div>
     <Header />
-    <main class="container mx-auto px-6 py-8 dark:text-white">
+    <main class="mx-auto w-full max-w-6xl px-5 pb-24 pt-24 md:px-8 md:pt-32 lg:px-12">
       <slot />
     </main>
     <Footer />
@@ -52,23 +101,111 @@ const { title } = Astro.props;
 
 <style is:global>
   :root {
-    color-scheme: light dark;
-    color: #13151a;
-    background-color: #1A202C;
+    --surface: #161b1f;
+    --surface-muted: #1f262c;
+    --ink: #e3e8ed;
+    --muted: #9aa8b4;
+    --line: #2a333b;
+    --brand: #2f6f9e;
+    --brand-strong: #255a81;
+    --accent: #3d8a54;
+    --font-display: 'Space Grotesk', 'Onest Variable', sans-serif;
+    --font-body: 'Manrope', 'Onest Variable', sans-serif;
   }
+
+  * {
+    box-sizing: border-box;
+  }
+
   html {
-    font-family: 'Onest Variable', sans-serif;
-    background: #ffff;
-    color: #2f323a;
-    background-size: 224px;
+    font-family: var(--font-body);
+    color: var(--ink);
+    background-color: #101417;
   }
+
   body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    align-items: center;
     overflow-x: hidden;
+    line-height: 1.6;
+    letter-spacing: 0.01em;
+  }
+
+  h1,
+  h2 {
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
+    font-weight: 700;
+  }
+
+  h1 {
+    text-wrap: balance;
+  }
+
+  .kicker {
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    font-size: 0.68rem;
+    font-weight: 700;
+    color: #8394a0;
+  }
+
+  .display-outline {
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(227, 232, 237, 0.5);
+  }
+
+  .section-wrap {
+    border: 1px solid #29343d;
+    background: linear-gradient(180deg, rgba(30, 37, 43, 0.62) 0%, rgba(22, 27, 31, 0.98) 100%);
+    padding: 1.1rem;
+  }
+
+  @media (min-width: 768px) {
+    .section-wrap {
+      padding: 2rem;
+    }
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(14px);
+    animation: reveal-up 640ms ease forwards;
+  }
+
+  .reveal-2 {
+    animation-delay: 120ms;
+  }
+
+  .reveal-3 {
+    animation-delay: 220ms;
+  }
+
+  @keyframes reveal-up {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  ::selection {
+    color: #f4f7fa;
+    background: #2f6f9e;
+  }
+
+  a,
+  button,
+  input,
+  textarea {
+    transition: background-color 160ms ease, border-color 160ms ease, color 160ms ease;
+  }
+
+  a:focus-visible,
+  button:focus-visible,
+  input:focus-visible,
+  textarea:focus-visible {
+    outline: 2px solid #2f6f9e;
+    outline-offset: 2px;
   }
 </style>
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />

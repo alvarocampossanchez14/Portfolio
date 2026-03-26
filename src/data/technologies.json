@@ -22,6 +22,10 @@
     {
         "name": "Nginx",
         "icon": "/icons/nginx.svg"
+    },
+    {
+      "name": "Flutter",
+      "icon": "/icons/flutter.svg"
     }
   ]
   

@@ -4,49 +4,57 @@ import proyectos from '../data/projects.json';
 const proyectosData = proyectos;
 ---
 
-<section class="p-8 w-full" id="projects">
-  <h2 class="text-5xl font-semibold ">PROYECTOS</h2>
-  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 mt-10 ">
+<section class="py-14 md:py-20" id="projects">
+  <div class="mb-10 flex flex-wrap items-end justify-between gap-4 reveal">
+    <div>
+      <p class="kicker">Proyectos</p>
+      <h2 class="mt-2 text-3xl leading-[0.95] text-text sm:text-4xl md:text-6xl">PROYECTOS APP Y WEB PARA EMPRESAS DE España Y CLIENTES INTERNACIONALES</h2>
+      <p class="mt-2 max-w-2xl text-sm text-textMuted md:text-base">Desarrollo aplicaciones y plataformas a medida con enfoque en rendimiento, conversion, SEO y crecimiento de negocio digital.</p>
+    </div>
+    <a href="https://github.com/alvarocampossanchez14/" target="_blank" class="hidden rounded-sm border border-border bg-surface px-4 py-2 text-sm font-semibold uppercase tracking-[0.06em] text-textMuted hover:border-primary hover:text-text md:inline-flex">Ver repositorios</a>
+  </div>
+
+  <div class="grid grid-cols-1 gap-5 md:grid-cols-2 md:gap-6">
     {proyectosData.map((proyecto) => (
-      <div class="flex flex-col justify-between hover:scale-105 transition-all duration-300 ease-in-out hover:border-2 hover:border-gray-500/90 items-center gap-5 py-5 px-7 max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
-        <img src={proyecto.image} alt={proyecto.name} class="w-full rounded-md h-32 sm:h-48 object-cover" />
-        
-        <div class="flex flex-col gap-2">
-          <h1 class="text-xl font-medium text-gray-800 dark:text-white">{proyecto.name}</h1>
-          <p class="text-gray-600 dark:text-gray-300">{proyecto.description}</p>
-          
-          <div class="grid grid-cols-2 gap-2">
+      <article class="group overflow-hidden rounded-sm border border-border bg-surface transition duration-300 hover:-translate-y-1 hover:border-primary/70 reveal reveal-2">
+        <div class="relative overflow-hidden border-b border-borderSoft">
+          <img src={proyecto.image} alt={`${proyecto.name} - proyecto app o web desarrollado por Alvaro Campos para empresa`} class="h-48 w-full object-cover transition duration-500 group-hover:scale-[1.04] sm:h-56" />
+        </div>
+
+        <div class="space-y-4 p-6">
+          <div class="space-y-2">
+            <h3 class="text-2xl font-semibold leading-tight text-text">{proyecto.name}</h3>
+            <p class="text-sm leading-relaxed text-textMuted">{proyecto.description}</p>
+          </div>
+
+          <div class="flex flex-wrap gap-2">
             {proyecto.technologies && proyecto.technologies.map((technology)=> (
-            <div class="flex gap-2 items-center justify-center bg-secondary/30 px-4 py-2 rounded-full">
-              <span class="text-sm font-medium text-gray-200 text-center ">{technology.name}</span>
+            <div class="flex items-center justify-center rounded-sm border border-borderSoft bg-surfaceAlt px-2.5 py-1">
+              <span class="text-[11px] font-semibold uppercase tracking-wide text-textSoft">{technology.name}</span>
             </div>
             ))}
-
           </div>
-        </div>
 
-        <div class="w-full bg-gray-600 h-0.5"></div>
-
-        <div class="flex gap-2">
-            <div class="bg-secondary font-bold py-2 px-4 rounded-full mt-2 flex items-center justify-between gap-2 hover:scale-105 hover:bg-opacity-55">
+          <div class="flex flex-wrap gap-2 pt-1">
             {proyecto?.status === "In Progress" ? (
-              <span class="flex items-center gap-2">
-                <i class="fa-solid fa-spinner animate-spin"></i>
-                En Progreso                
+              <span class="inline-flex items-center gap-2 rounded-sm border border-successBorder bg-successBg px-3 py-2 text-sm font-semibold text-success">
+                <i class="fa-solid fa-circle text-[10px]"></i> En progreso
               </span>
             ) : (
-              <a href={proyecto.demoLink} target="_blank" class="flex items-center gap-2 z-50">
+              <a href={proyecto.demoLink} target="_blank" class="inline-flex w-full items-center justify-center gap-2 rounded-sm bg-primary px-4 py-2 text-sm font-semibold text-white hover:bg-primaryStrong sm:w-auto">
                 <i class="fa-solid fa-external-link"></i>
-                Preview
+                Ver proyecto
               </a>
             )}
-            </div>
-          <a href={proyecto.githubLink} target="_blank" class="bg-secondary font-bold py-2 px-4 rounded-full mt-2 flex items-center justify-between gap-2 hover:scale-105 hover:bg-opacity-55">
-            <i class="fa-brands fa-github"></i>
-            Código
-          </a>
+            {proyecto.githubLink && (
+              <a href={proyecto.githubLink} target="_blank" class="inline-flex w-full items-center justify-center gap-2 rounded-sm border border-border bg-surface px-4 py-2 text-sm font-semibold text-textMuted hover:border-primary hover:text-text sm:w-auto">
+                <i class="fa-brands fa-github"></i>
+                Código
+              </a>
+            )}
+          </div>
         </div>
-      </div>
+      </article>
     ))}
   </div>
 </section>

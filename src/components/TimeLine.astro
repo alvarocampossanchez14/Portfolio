@@ -1,14 +1,6 @@
 ---
 import TimeLineItem from "./TimeLineItem.astro";
 
-interface Props {
-    title: string;
-    company: string;
-    location: string;
-    date: string;
-    description: string;
-}
-
 const EXPERIENCE = [
   {
     title: 'Desarrollador Web Freelance',
@@ -35,18 +27,18 @@ const EXPERIENCE = [
 
 ---
 
-<div class="py-20 flex flex-col gap-10">
-    <h2 class="text-5xl font-semibold">EXPERIENCIA</h2>
+<section id="experience" class="py-14 md:py-16">
+  <div class="mb-8">
+    <p class="kicker">Trayectoria</p>
+    <h2 class="mt-2 text-3xl leading-tight text-text sm:text-4xl md:text-5xl">EXPERIENCIA COMO PROGRAMADOR FREELANCE EN APPS Y WEB</h2>
+    <p class="mt-2 max-w-2xl text-sm text-textMuted md:text-base">Trayectoria desarrollando aplicaciones moviles y soluciones web para empresas de Reus, Tarragona y clientes remotos.</p>
+  </div>
 
-    <ol class="relative border-s border-gray-200 dark:border-gray-700">                  
-        {
-            EXPERIENCE.map(experience => (
-                <li class="mb-10 ms-4">
-                    <TimeLineItem {...experience} />
-                </li>
-            ))
-                
-        }
-    </ol>
-
-</div>
+  <ol class="relative space-y-5 border-s border-border pl-6">
+    {EXPERIENCE.map((experience) => (
+      <li class="ms-2">
+        <TimeLineItem {...experience} />
+      </li>
+    ))}
+  </ol>
+</section>

@@ -2,10 +2,13 @@
 const {title, company, location, description, date} = Astro.props
 ---
 
-
-<div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white dark:border-primary dark:bg-primary dark:shadow-xl dark:shadow-primary"></div>
-<time class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">{title}</time>
-<h3 class="text-lg font-semibold text-gray-900 dark:text-white">{company}</h3>
-<h4 class="text-md font-light text-gray-900 dark:text-white">{location}</h4>
-<p class="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">{description}</p>
-<p class="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">{date}</p>
+<div class="absolute -start-[7px] mt-7 h-3 w-3 rounded-full border border-border bg-primary"></div>
+<article class="rounded-sm border border-border bg-surface p-5">
+	<div class="flex flex-wrap items-center justify-between gap-2">
+		<h3 class="text-base font-semibold text-text md:text-lg">{title}</h3>
+		<time class="inline-flex rounded-sm border border-border bg-surfaceAlt px-2.5 py-1 text-xs font-semibold uppercase tracking-[0.06em] text-textSoft">{date}</time>
+	</div>
+	<p class="mt-1 text-sm font-semibold uppercase tracking-[0.04em] text-textLabel">{company}</p>
+	<p class="text-sm text-textSoft">{location}</p>
+	<p class="mt-3 border-t border-borderSoft pt-3 text-sm leading-relaxed text-textMuted">{description}</p>
+</article>
