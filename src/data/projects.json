@@ -3,7 +3,7 @@
         "name": "WEB oficial del C.E Unió Astorga",
         "description": "Web oficial del Club Esportiu Unió Astorga, equipo de fútbol base en Reus.",
         "image": "projects/astorga.png",
-        "demoLink": "https://ceuniastorga.cat",
+        "demoLink": "https://ceunioastorga.cat",
         "githubLink": "https://github.com/alvarocampossanchez14/",
         "technologies": [
             {"name":"NextJS"},
