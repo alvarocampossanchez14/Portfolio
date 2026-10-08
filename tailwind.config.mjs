@@ -26,6 +26,13 @@ export default {
 				successBorder: '#274b31',
 				ringPrimary: '#27485f',
 			},
+			backgroundImage: {
+				grid:  'linear-gradient(to right, rgb(255 255 255 / 0.08) 1px, transparent 1px), linear-gradient(to bottom, rgb(255 255 255 / 0.08) 1px, transparent 1px)',
+			},
+			backgroundSize: {
+				grid: '40px 40px'
+			}
+
 		},
 	},
 	plugins: [],

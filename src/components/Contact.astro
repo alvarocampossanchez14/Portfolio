@@ -2,58 +2,166 @@
   <div class="grid gap-6 lg:grid-cols-[0.95fr_1.05fr]">
     <div class="section-wrap rounded-sm reveal">
       <p class="kicker">Contacto</p>
-      <h2 class="mt-3 text-3xl leading-[0.95] tracking-tight text-text sm:text-5xl">BUSCAS UN PROGRAMADOR FREELANCE PARA TU APP O PLATAFORMA WEB?</h2>
+      <h2
+        class="mt-3 text-3xl leading-[0.95] tracking-tight text-text sm:text-5xl"
+      >
+        BUSCAS UN PROGRAMADOR FREELANCE PARA TU APP O PLATAFORMA WEB?
+      </h2>
       <p class="mt-3 text-sm leading-relaxed text-textMuted sm:text-base">
-        Escribeme y te ayudo a definir la mejor solucion para tu app movil, SaaS o web corporativa. Trabajo en remoto con empresas de toda España y clientes internacionales.
+        Escribeme y te ayudo a definir la mejor solucion para tu app movil, SaaS
+        o web corporativa. Trabajo en remoto con empresas de toda España y
+        clientes internacionales.
       </p>
       <div class="mt-6 space-y-3 text-sm text-textSoft">
-        <p class="flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-accent"></span>Respuesta inicial en menos de 24 horas</p>
-        <p class="flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-accent"></span>Presupuesto cerrado y hoja de ruta tecnica</p>
-        <p class="flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-accent"></span>Desarrollo, lanzamiento y soporte continuo</p>
+        <p class="flex items-center gap-2">
+          <span class="h-1.5 w-1.5 rounded-full bg-accent"></span>Respuesta
+          inicial en menos de 24 horas
+        </p>
+        <p class="flex items-center gap-2">
+          <span class="h-1.5 w-1.5 rounded-full bg-accent"></span>Presupuesto
+          cerrado y hoja de ruta tecnica
+        </p>
+        <p class="flex items-center gap-2">
+          <span class="h-1.5 w-1.5 rounded-full bg-accent"></span>Desarrollo,
+          lanzamiento y soporte continuo
+        </p>
       </div>
     </div>
 
-    <form action="https://formspree.io/f/xvgzbajk" method="POST" class="rounded-sm border border-primary/40 bg-surface p-4 sm:p-8 reveal reveal-2">
+    <form
+      action="https://formspree.io/f/xvgzbajk"
+      method="POST"
+      class="rounded-sm border border-primary/40 bg-surface p-4 sm:p-8 reveal reveal-2"
+    >
       <div class="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
-      <div>
-        <label for="first-name" class="block text-sm font-medium leading-6 text-textLabel">Nombre</label>
-        <div class="mt-2.5">
-          <input type="text" name="first-name" id="first-name" autocomplete="given-name" class="block w-full rounded-sm border border-border bg-surfaceAlt py-2.5 px-3 text-text focus:border-primary focus:ring-2 focus:ring-ringPrimary sm:text-sm sm:leading-6" required>
+        <div>
+          <label
+            for="first-name"
+            class="block text-sm font-medium leading-6 text-textLabel"
+            >Nombre</label
+          >
+          <div class="mt-2.5">
+            <input
+              type="text"
+              name="first-name"
+              id="first-name"
+              autocomplete="given-name"
+              class="block w-full rounded-sm border border-border bg-surfaceAlt py-2.5 px-3 text-text focus:border-primary focus:ring-2 focus:ring-ringPrimary sm:text-sm sm:leading-6"
+              required
+            />
+          </div>
+        </div>
+        <div>
+          <label
+            for="last-name"
+            class="block text-sm font-medium leading-6 text-textLabel"
+            >Apellidos</label
+          >
+          <div class="mt-2.5">
+            <input
+              type="text"
+              name="last-name"
+              id="last-name"
+              autocomplete="family-name"
+              required
+              class="block w-full rounded-sm border border-border bg-surfaceAlt py-2.5 px-3 text-text focus:border-primary focus:ring-2 focus:ring-ringPrimary sm:text-sm sm:leading-6"
+            />
+          </div>
+        </div>
+        <div class="sm:col-span-2">
+          <label
+            for="company"
+            class="block text-sm font-medium leading-6 text-textLabel"
+            >Empresa</label
+          >
+          <div class="mt-2.5">
+            <input
+              type="text"
+              name="company"
+              id="company"
+              autocomplete="organization"
+              required
+              class="block w-full rounded-sm border border-border bg-surfaceAlt py-2.5 px-3 text-text focus:border-primary focus:ring-2 focus:ring-ringPrimary sm:text-sm sm:leading-6"
+            />
+          </div>
+        </div>
+        <div class="sm:col-span-2">
+          <label
+            for="email"
+            class="block text-sm font-medium leading-6 text-textLabel"
+            >Correo electrónico</label
+          >
+          <div class="mt-2.5">
+            <input
+              type="email"
+              name="email"
+              id="email"
+              autocomplete="email"
+              required
+              class="block w-full rounded-sm border border-border bg-surfaceAlt py-2.5 px-3 text-text focus:border-primary focus:ring-2 focus:ring-ringPrimary sm:text-sm sm:leading-6"
+            />
+          </div>
+        </div>
+        <div class="sm:col-span-2">
+          <label
+            for="message"
+            class="block text-sm font-medium leading-6 text-textLabel"
+            >Mensaje</label
+          >
+          <div class="mt-2.5">
+            <textarea
+              name="message"
+              id="message"
+              rows="5"
+              required
+              class="block w-full rounded-sm border border-border bg-surfaceAlt py-2.5 px-3 text-text focus:border-primary focus:ring-2 focus:ring-ringPrimary sm:text-sm sm:leading-6"
+              placeholder="Cuéntame tu objetivo, plazos y tipo de proyecto"
+            ></textarea>
+          </div>
+        </div>
+        <div class="sm:col-span-2">
+          <label
+            class="inline-flex items-start gap-3 text-sm text-textSoft"
+            for="privacy"
+          >
+            <div class="inline-flex items-center">
+              <label class="flex items-center cursor-pointer relative">
+                <input
+
+                  type="checkbox"
+                  class="peer h-6 w-6 cursor-pointer transition-all appearance-none rounded-full bg-secondary shadow hover:shadow-md border border-border  checked:bg-primary"
+                  id="check-custom-style"
+                />
+                <span
+                  class="absolute text-white opacity-0 peer-checked:opacity-100 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-3.5 w-3.5"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                    stroke="currentColor"
+                    stroke-width="1"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                      clip-rule="evenodd"></path>
+                  </svg>
+                </span>
+              </label>
+            </div>
+            <span
+              >Al enviar este formulario, aceptas la política de privacidad.</span
+            >
+          </label>
         </div>
       </div>
-      <div>
-        <label for="last-name" class="block text-sm font-medium leading-6 text-textLabel">Apellidos</label>
-        <div class="mt-2.5">
-          <input type="text" name="last-name" id="last-name" autocomplete="family-name" required class="block w-full rounded-sm border border-border bg-surfaceAlt py-2.5 px-3 text-text focus:border-primary focus:ring-2 focus:ring-ringPrimary sm:text-sm sm:leading-6">
-        </div>
-      </div>
-      <div class="sm:col-span-2">
-        <label for="company" class="block text-sm font-medium leading-6 text-textLabel">Empresa</label>
-        <div class="mt-2.5">
-          <input type="text" name="company" id="company" autocomplete="organization" required class="block w-full rounded-sm border border-border bg-surfaceAlt py-2.5 px-3 text-text focus:border-primary focus:ring-2 focus:ring-ringPrimary sm:text-sm sm:leading-6">
-        </div>
-      </div>
-      <div class="sm:col-span-2">
-        <label for="email" class="block text-sm font-medium leading-6 text-textLabel">Correo electrónico</label>
-        <div class="mt-2.5">
-          <input type="email" name="email" id="email" autocomplete="email" required class="block w-full rounded-sm border border-border bg-surfaceAlt py-2.5 px-3 text-text focus:border-primary focus:ring-2 focus:ring-ringPrimary sm:text-sm sm:leading-6">
-        </div>
-      </div>
-      <div class="sm:col-span-2">
-        <label for="message" class="block text-sm font-medium leading-6 text-textLabel">Mensaje</label>
-        <div class="mt-2.5">
-          <textarea name="message" id="message" rows="5" required class="block w-full rounded-sm border border-border bg-surfaceAlt py-2.5 px-3 text-text focus:border-primary focus:ring-2 focus:ring-ringPrimary sm:text-sm sm:leading-6" placeholder="Cuéntame tu objetivo, plazos y tipo de proyecto"></textarea>
-        </div>
-      </div>
-      <div class="sm:col-span-2">
-        <label class="inline-flex items-start gap-3 text-sm text-textSoft" for="privacy">
-          <input id="privacy" type="checkbox" required class="mt-1 h-4 w-4 rounded border-border bg-surfaceAlt text-primary focus:ring-ringPrimary" />
-          <span>Al enviar este formulario, aceptas la política de privacidad.</span>
-        </label>
-      </div>
-    </div>
       <div class="mt-6 sm:mt-8">
-        <button type="submit" class="block w-full rounded-sm bg-primary px-4 py-3 text-center text-base font-semibold text-white hover:bg-primaryStrong">
+        <button
+          type="submit"
+          class="block w-full rounded-sm bg-primary px-4 py-3 text-center text-base font-semibold text-white hover:bg-primaryStrong"
+        >
           Solicitar propuesta
         </button>
       </div>
