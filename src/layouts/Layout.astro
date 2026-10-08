@@ -14,9 +14,9 @@ const { title } = Astro.props;
 <html lang="es" class="scroll-smooth select-none">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="Desarrollador full-stack freelance en Reus (Tarragona) y en remoto. Creo aplicaciones web, SaaS, eCommerce y apps móviles a medida con Laravel, Astro, Flutter y Tailwind para empresas de España y clientes internacionales." />
+    <meta name="description" content="Desarrollador full-stack freelance en Reus y Tarragona, para empresas de toda Cataluña y España. Aplicaciones web, SaaS, eCommerce y apps móviles a medida con Laravel, Astro, Flutter y Tailwind. Trabajo presencial en Cataluña y en remoto." />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="keywords" content="desarrollador full stack freelance, programador full stack, desarrollador full-stack Reus, desarrollador full-stack Tarragona, desarrollador web freelance, programador Laravel freelance, desarrollo SaaS, desarrollo eCommerce, desarrollo apps móviles Flutter, freelance full stack developer España" />
+    <meta name="keywords" content="desarrollador full stack freelance, desarrollador full stack Reus, desarrollador full stack Tarragona, desarrollador full stack Cataluña, desarrollador full stack Barcelona, desarrollador full stack España, programador freelance Reus, programador freelance Tarragona, programador freelance Cataluña, desarrollador web freelance España, programador Laravel freelance, desarrollo SaaS, desarrollo eCommerce, desarrollo apps móviles Flutter, desenvolupador full stack Catalunya, freelance full stack developer Spain" />
     <meta name="author" content="Álvaro Campos" />
     <meta name="theme-color" content="#2f2f2e" />
     <meta name="robots" content="index, follow" />
@@ -34,7 +34,7 @@ const { title } = Astro.props;
 
     <!-- Open Graph para Facebook, LinkedIn -->
     <meta property="og:title" content={`${title} | Desarrollador Full-Stack Freelance`} />
-    <meta property="og:description" content="Desarrollador full-stack freelance: aplicaciones web, SaaS, eCommerce y apps móviles a medida para empresas en España y clientes internacionales." />
+    <meta property="og:description" content="Desarrollador full-stack freelance en Reus y Tarragona: aplicaciones web, SaaS, eCommerce y apps móviles a medida para empresas de Cataluña, España y clientes internacionales." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://alvarocampos.dev" />
     <meta property="og:locale" content="es_ES" />
@@ -42,11 +42,11 @@ const { title } = Astro.props;
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={`${title} | Desarrollador Full-Stack Freelance`} />
-    <meta name="twitter:description" content="Desarrollador full-stack freelance para SaaS, eCommerce, plataformas web y apps móviles. Servicio remoto para España y clientes internacionales." />
+    <meta name="twitter:description" content="Desarrollador full-stack freelance en Reus y Tarragona para SaaS, eCommerce, plataformas web y apps móviles. Cataluña, toda España y remoto." />
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <title>{title} | Desarrollador Full-Stack Freelance en Reus y Remoto</title>
+    <title>{title} | Desarrollador Full-Stack en Reus, Cataluña y España</title>
 
     <script type="application/ld+json" set:html={JSON.stringify({
       '@context': 'https://schema.org',
@@ -72,7 +72,16 @@ const { title } = Astro.props;
         'MySQL',
         'Docker'
       ],
-      areaServed: ['Reus', 'Tarragona', 'Cataluña', 'España', 'Europe', 'Remote']
+      areaServed: [
+        { '@type': 'City', name: 'Reus' },
+        { '@type': 'City', name: 'Tarragona' },
+        { '@type': 'City', name: 'Barcelona' },
+        { '@type': 'City', name: 'Lleida' },
+        { '@type': 'City', name: 'Girona' },
+        { '@type': 'AdministrativeArea', name: 'Cataluña' },
+        { '@type': 'Country', name: 'España' },
+        'Europe'
+      ]
     })} />
 
     <script type="application/ld+json" set:html={JSON.stringify({
@@ -87,8 +96,21 @@ const { title } = Astro.props;
         'Desarrollo eCommerce',
         'Desarrollo de aplicaciones móviles con Flutter'
       ],
-      areaServed: ['España', 'Europa', 'Remote'],
-      availableLanguage: ['es', 'en']
+      areaServed: [
+        { '@type': 'City', name: 'Reus' },
+        { '@type': 'City', name: 'Tarragona' },
+        { '@type': 'AdministrativeArea', name: 'Cataluña' },
+        { '@type': 'Country', name: 'España' },
+        'Europe'
+      ],
+      address: {
+        '@type': 'PostalAddress',
+        addressLocality: 'Reus',
+        addressRegion: 'Tarragona',
+        addressCountry: 'ES'
+      },
+      geo: { '@type': 'GeoCoordinates', latitude: 41.1561, longitude: 1.1069 },
+      availableLanguage: ['es', 'ca', 'en']
     })} />
   </head>
   <body class="scroll-smooth bg-bg text-text">
