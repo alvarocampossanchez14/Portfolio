@@ -46,8 +46,24 @@
         </div>
       </div>
       <div class="sm:col-span-2">
-        <label class="inline-flex items-start gap-3 text-sm text-textSoft" for="privacy">
-          <input id="privacy" type="checkbox" required class="mt-1 h-4 w-4 rounded border-border bg-surfaceAlt text-primary focus:ring-ringPrimary" />
+        <label class="inline-flex cursor-pointer items-center gap-3 text-sm text-textSoft" for="privacy">
+          <input id="privacy" name="privacy" type="checkbox" required class="peer sr-only" />
+          <!-- Monitor: apagado por defecto, se "enciende" al marcar -->
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-8 w-9 shrink-0 rounded-sm text-textSubtle transition-colors hover:text-textMuted peer-checked:text-primary peer-focus-visible:ring-2 peer-focus-visible:ring-ringPrimary [&_.screen]:fill-surfaceAlt [&_.screen]:transition-colors peer-checked:[&_.screen]:fill-primary/20 peer-checked:[&_.tick]:opacity-100"
+            viewBox="0 0 36 32"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.8"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <rect class="screen" x="3" y="3" width="30" height="20" rx="2.5"></rect>
+            <path d="M18 23v4M11 29h14"></path>
+            <path class="tick opacity-0 transition-opacity" d="M11 13l5 5 9-9" stroke="#7ac089" stroke-width="2.4"></path>
+          </svg>
           <span>Al enviar este formulario, aceptas la política de privacidad.</span>
         </label>
       </div>
